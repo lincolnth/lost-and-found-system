@@ -1,0 +1,57 @@
+<showItems>:
+    name:'showitems'
+     
+    AnchorLayout:
+        padding:root.width*.1,root.height*.1
+        spacing:30
+        
+        GridLayout:
+            
+            cols:1
+            rows:3
+            height: '48dp'
+             
+            GridLayout:
+                cols:1
+                rows:1
+                size_hint_y:.5
+                Label:
+                    text:'UZLoFo'
+                    size_hint:1,0.5
+                
+            GridLayout:
+                cols:2
+                rows:1
+                Label:
+                    text:'reg number'
+                    size: self.parent.size
+                    pos:self.parent.pos
+                TextInput:
+                    id: reg_num
+                    multiline:False
+                    text_hint:'reg number'
+                    size: self.parent.size
+                    pos:self.parent.pos
+                
+                
+
+                        
+            GridLayout:
+                rows:1
+                cols:3                
+                
+                
+
+                Label:
+                    text:''
+                    size: self.size
+                Button:
+                    text:'back'
+                    size: self.size
+                    on_release:app.root.current='homepage'
+                    
+                Button:
+                    text:'submit'
+                    size: self.size
+                    on_release: app.root.current='homepage'
+                    

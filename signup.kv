@@ -1,0 +1,76 @@
+<SignIn>:
+    name:'sign_in'
+    GridLayout:
+        foreground_color: (1,0,1,1)
+        background_color: (0,0,0,0)
+        cols:2
+        rows:7
+        padding:100
+        spacing:30
+
+        Label:
+            text:"registration number"
+        TextInput:
+            id : reg_num
+            text:""
+            multiline:False
+            size_hint_x: .95
+        
+        Label:
+            text:"first name"
+
+        TextInput:
+            id :first_name
+            text:""
+            multiline:False            
+            size: self.size
+        
+        Label:
+            text:"last name"
+        TextInput:
+            id:last_name
+            text:""
+            multiline:False
+            size: self.size
+
+        Label:
+            text:"email address"
+        TextInput:
+            id: email_address 
+            text:""
+            multiline:False
+            size_hint_x: .95
+
+        Label:
+            text:"phone number"
+        TextInput:
+            id: phone_number 
+            text:""
+            multiline:False
+            size_hint_x: .95
+
+    
+    
+        Label:
+            text:"password"
+
+        TextInput:
+            id: password 
+            text:""
+            password:True
+            multiline:False
+            size_hint_x: .95
+    
+    
+        Button:
+            text:"back"
+            size_hint:0.5,0.9
+            on_release:app.root.current='login'
+                
+            
+        Button:
+            text:"submit"
+            size_hint:0.5,0.9
+            on_release:
+                root.SignIn_insert()
+                app.root.current='homepage'

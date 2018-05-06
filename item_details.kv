@@ -1,0 +1,68 @@
+<ITdet>:
+    name:'details'
+    GridLayout:
+        foreground_color: (1,0,1,1)
+        background_color: (0,0,0,0)
+        cols:2
+        rows:6
+        padding:100
+        spacing:30
+
+        Label:
+            text:"details for item no"
+        TextInput:
+            id : reg_num
+            text:""
+            multiline:False
+            size_hint_x: .95
+        
+        Label:
+            text:"reported by"
+
+        TextInput:
+            id :reported_by
+            text:""
+            multiline:False            
+            size: self.size
+        
+        Label:
+            text:"item_category"
+        TextInput:
+            id:item_category
+            text:""
+            multiline:False
+            size: self.size
+
+        Label:
+            text:"item_name"
+        TextInput:
+            id: item_name
+            text:""
+            multiline:False
+            size_hint_x: .95
+
+        Label:
+            text:"date_lost"
+        TextInput:
+            id: date_lost 
+            text:""
+            multiline:False
+            size_hint_x: .95
+
+    
+    
+        Button:
+            text:"cancel"
+            size_hint:0.5,0.9
+            on_release:
+                #root.SignIn_insert()
+                app.root.current='homepage'
+            
+
+        
+        Button:
+            text:"match"
+            size_hint:0.5,0.9
+            on_release:
+                #root.SignIn_insert()
+                app.root.current='matchingitems'

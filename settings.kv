@@ -1,0 +1,89 @@
+<Settings>:
+	name: 'set'
+    GridLayout:
+        rows:3
+        cols:1
+        padding:10
+        spacing:30
+        BoxLayout:
+            orientation: 'horizontal'
+            size: self.size
+            Label:
+                pos_hint:{'center_x':.5 , 'center_y':.5}
+                canvas.before:
+                    BorderImage:
+                        #border:.5,.5,.,.1
+                        source:'C:\Users\Personal\Documents\lostandfound\earth.gif'
+                        pos: self.pos
+                        size: self.size
+                        
+           
+        BoxLayout:
+            orientation: 'vertical'
+            
+            size: self.size
+            spacing : 30
+            
+            
+            
+            Button:
+                text:"change password"
+                size_hint:.5,0.9
+                on_release:
+                    app.root.current='details'
+                    
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                background_color: 0.3,0.8,0,0  # the last zero is the critical on, make invisible
+                canvas.before:
+                    Color:
+                        rgba: (.4,.4,.4,.5) if self.state=='normal' else (0,.7,.7,1)  # visual feedback of press
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10,]
+                
+
+            Button:
+                text:"messages"
+                size_hint:.5,0.9
+                on_release:
+                    app.root.current='details'
+                    root.itemTracker()
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                background_color: 0.3,0.8,0,0  # the last zero is the critical on, make invisible
+                canvas.before:
+                    Color:
+                        rgba: (.4,.4,.4,.5) if self.state=='normal' else (0,.7,.7,1)  # visual feedback of press
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10,]
+                
+            
+            Button:
+                text:"LF account"
+                size_hint:.5,0.9
+                on_release:
+                    app.root.current='details'
+                    root.itemTracker()
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                background_color: 0.3,0.8,0,0  # the last zero is the critical on, make invisible
+                canvas.before:
+                    Color:
+                        rgba: (.4,.4,.4,.5) if self.state=='normal' else (0,.7,.7,1)  # visual feedback of press
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10,]
+               
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            size: self.size
+            
+            Label:
+                text:""
+                size_hint:.3,0.4
+            Label:
+                text:""
+                size_hint:.3,0.4

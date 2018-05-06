@@ -1,0 +1,136 @@
+<ILostPage>:
+    name:'ilost'
+    AnchorLayout:
+        padding:root.width*.1,root.height*.1
+        spacing:30
+        
+        GridLayout:
+            
+            cols:1
+            rows:3
+            size: self.size
+             
+            GridLayout:
+                cols:2
+                rows:1
+                height: '48dp'
+                Label:
+                    text:'UZLoFo'
+                    size_hint:1,0.5
+                Label:
+                    text:'report lost item'
+                    size_hint:1,0.5
+            GridLayout:
+                cols:2
+                rows:2
+                Label:
+                    text:'reg number'
+                    size: self.parent.size
+                    pos:self.parent.pos
+                TextInput:
+                    id:reg_num
+                    text_hint:'reg number'
+                    size: self.parent.size
+                    pos:self.parent.pos
+                Label:
+                    text:'category'
+                    size: self.parent.size
+                    pos:self.parent.pos
+                Button:
+                    id: item_category
+                    text: 'select here'
+                    on_release: dropdown.open(self)
+                    size_hint_y: None
+                    height: '48dp'
+                    on_parent: dropdown.dismiss()
+                    DropDown:
+                        id: dropdown                    
+                        on_select: item_category.text = '{}'.format(args[1])
+                        Button:
+                            text: 'cellphone'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('cellphone')
+
+                        Button:
+                            text: 'computer'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('computer')
+
+                        Button:
+                            text: 'other gadgets'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('other-gadgets')
+
+                        Button:
+                            text: 'locks'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('locks')
+
+                        Button:
+                            text: 'bank cards'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('bank cards')
+
+
+
+                        Button:
+                            text: 'id cards'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('ID cards')
+
+                        Button:
+                            text: 'stationary'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('stationary')
+
+                        Button:
+                            text: 'clothing'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('clothing')
+
+                        Button:
+                            text: 'other'
+                            size_hint_y: None
+                            height: '48dp'
+                            on_release: dropdown.select('other')
+
+                        
+            GridLayout:
+                rows:4
+                cols:2                
+                
+                Label:
+                    text:'name of item'
+                TextInput:
+                    id:item_name
+                    multiline:False
+                Label:
+                    text:'description'
+                TextInput:
+                    id:item_description
+                    multiline:True
+                Label:
+                    text:'date lost'
+                Button:
+                    text: 'Update'
+                    on_press: root.Picker()
+                    
+                Button:
+                    text:'cancel report'
+                    on_release:app.root.current='homepage'
+                    
+                Button:
+                    text:'submit'
+                    on_release:
+                        root.submitLost()
+                        app.root.current='homepage'
+                           
+            
